@@ -37,7 +37,7 @@ class OnboardScreen extends StatelessWidget {
         },
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 60, bottom: 27, right: 27, left: 27),
+              const EdgeInsets.only(top: 20, bottom: 15, right: 27, left: 27),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -91,7 +91,7 @@ class OnboardScreen extends StatelessWidget {
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
-                      margin: const EdgeInsets.only(top: 40),
+                      margin: const EdgeInsets.only(top: 30),
                       height: 55,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(

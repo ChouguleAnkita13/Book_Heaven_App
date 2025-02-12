@@ -54,10 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 final successState = state as HomeLoadedSuccessState;
                 return SingleChildScrollView(
                   child: SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 1.14,
+                    height: MediaQuery.sizeOf(context).height * 1.18,
                     child: Padding(
                       padding:
-                          const EdgeInsets.only(top: 50, bottom: 12, left: 24),
+                          const EdgeInsets.only(top: 20, bottom: 12, left: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

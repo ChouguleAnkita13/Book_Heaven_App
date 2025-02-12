@@ -29,11 +29,11 @@ class BookDetail extends StatelessWidget {
         builder: (context, state) {
           Book updatedBook = (state is BookUpdatedState) ? state.book : book;
           return SizedBox(
-            height: MediaQuery.of(context).size.height - 50,
+            height: MediaQuery.of(context).size.height - 20,
             child: Padding(
               padding: const EdgeInsets.all(25),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Center(
@@ -192,12 +192,12 @@ class BookDetail extends StatelessWidget {
                               clickedBook: updatedBook));
                         },
                         child: const SizedBox(
-                          width: 170,
+                          width: 160,
                           child: CustomButton(title: "Add to Bag"),
                         ),
                       ),
                       const SizedBox(
-                        width: 150,
+                        width: 140,
                         child: CustomButton(
                           title: "Buy Now",
                           backgroundColor: Colors.white,

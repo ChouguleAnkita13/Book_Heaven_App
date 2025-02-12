@@ -55,15 +55,15 @@ class _CartScreenState extends State<CartScreen> {
                     0.0, (sum, item) => sum + (item.bookPrice * item.quantity));
                 return SingleChildScrollView(
                   child: SizedBox(
-                    height: MediaQuery.sizeOf(context).height - 50,
+                    height: MediaQuery.sizeOf(context).height * 1.12,
                     child: Padding(
                       padding: const EdgeInsets.only(
-                          top: 50, bottom: 15, left: 15, right: 15),
+                          top: 20, bottom: 15, left: 15, right: 15),
                       child: Column(
                         children: [
                           Center(
                             child: Container(
-                              margin: const EdgeInsets.symmetric(vertical: 20),
+                              margin: const EdgeInsets.symmetric(vertical: 10),
                               child: Text(
                                 "My Bag",
                                 style: GoogleFonts.roboto(
@@ -116,7 +116,7 @@ class _CartScreenState extends State<CartScreen> {
                             title: "Pay Now",
                           ),
                           const SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                         ],
                       ),
