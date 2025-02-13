@@ -41,7 +41,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       IncrementProductCountEvent event, Emitter<HomeState> emit) {
     log("Incrementing product count for ${event.book.bookName}");
 
-    // Update the product's `numberOfItems`
     event.book.quantity += 1;
     emit(BookUpdatedState(book: event.book));
   }
@@ -64,8 +63,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> homeAddToCartButtonClickedEvent(
       HomeAddToCartButtonClickedEvent event, Emitter<HomeState> emit) {
     log("${event.clickedBook.bookName} added in bag");
-    cartList.add(event.clickedBook);
-    emit(HomeBookItemCartedActionState(
-        message: "${event.clickedBook.bookName} added in bag"));
+    if (cartList.contains(event.clickedBook)) {
+      emit(HomeBookItemCartedActionState(
+          message: "${event.clickedBook.bookName} already added in bag"));
+    } else {
+      cartList.add(event.clickedBook);
+      emit(HomeBookItemCartedActionState(
+          message: "${event.clickedBook.bookName} added in bag"));
+    }
   }
 }

@@ -61,6 +61,7 @@ class LoginRegisterBloc extends Bloc<LoginRegisterEvent, LoginRegisterState> {
       Emitter<LoginRegisterState> emit) async {
     if (event.userCredential["email"].trim()! != "" &&
         event.userCredential["password"].trim() != "" &&
+        event.userCredential["username"].trim() != "" &&
         event.userCredential["gender"].trim() != "") {
       String res = await FirebaseData.createUserAccount(event.userCredential);
       if (res == "true") {
@@ -70,7 +71,7 @@ class LoginRegisterBloc extends Bloc<LoginRegisterEvent, LoginRegisterState> {
       }
     } else {
       emit(LoginRegisterWithDataButtonErrorState(
-          error: "Please Enter Email, Password And Select Gender"));
+          error: "Please Enter Name, Email, Password And Select Gender"));
     }
   }
 
@@ -80,21 +81,18 @@ class LoginRegisterBloc extends Bloc<LoginRegisterEvent, LoginRegisterState> {
     emit(LogoutButtonNavigateState());
   }
 
-  /// **Password Visibility Toggle**
   FutureOr<void> onPasswordVisibilityEvent(
       OnPasswordVisibilityEvent event, Emitter<LoginRegisterState> emit) {
     isPasswordVisible = !isPasswordVisible;
     emit(PasswordVisibilityState(isVisible: isPasswordVisible));
   }
 
-  /// **Dropdown Selection**
   FutureOr<void> onDropdownSelectionEvent(
       OnDropdownSelectionEvent event, Emitter<LoginRegisterState> emit) {
     selectedDropdownValue = event.selectedValue;
     emit(DropdownSelectionState(selectedValue: selectedDropdownValue));
   }
 
-  /// **Radio Button Selection**
   FutureOr<void> onRadioSelectionEvent(
       OnRadioSelectionEvent event, Emitter<LoginRegisterState> emit) {
     selectedGender = event.selectedValue;

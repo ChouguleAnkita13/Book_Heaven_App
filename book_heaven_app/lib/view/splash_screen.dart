@@ -11,7 +11,6 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () async {
       await SessionData.getSessiondata();
-
       log("${SessionData.isLogin}");
 
       ///CHECK USER IS ALREADY LOGGED IN

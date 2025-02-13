@@ -16,22 +16,18 @@ class RegisterWithDataButtonNavigateEvent extends LoginRegisterEvent {
 
 class LogoutButtonNavigateEvent extends LoginRegisterEvent {}
 
-/// **Password Visibility Event**
 class OnPasswordVisibilityEvent extends LoginRegisterEvent {}
 
-/// **Dropdown Selection Event**
 class OnDropdownSelectionEvent extends LoginRegisterEvent {
   final String selectedValue;
   OnDropdownSelectionEvent({required this.selectedValue});
 }
 
-/// **Radio Selection Event**
 class OnRadioSelectionEvent extends LoginRegisterEvent {
   final String selectedValue;
   OnRadioSelectionEvent({required this.selectedValue});
 }
 
-/// **Checkbox Selection Event**
 class OnCheckboxSelectionEvent extends LoginRegisterEvent {
   final bool isChecked;
   OnCheckboxSelectionEvent({required this.isChecked});
