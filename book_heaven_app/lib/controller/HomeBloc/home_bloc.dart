@@ -51,7 +51,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     log("Decrementing product count for ${event.book.bookName}");
 
     if (event.book.quantity > 1) {
-      // Update the product's `numberOfItems`
+      // Update the product's `quantity`
       event.book.quantity -= 1;
 
       // Emit a state to refresh the cart view

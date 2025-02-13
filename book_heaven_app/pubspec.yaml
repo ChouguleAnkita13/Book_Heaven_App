@@ -34,18 +34,19 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  bloc: ^9.0.0
   flutter_bloc: ^9.0.0
   google_fonts: ^6.2.1
   shared_preferences: ^2.3.3
-  bloc: ^9.0.0
   cloud_firestore: ^5.6.3
   firebase_auth: ^5.4.2
   firebase_core: ^3.11.0
 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+ 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
